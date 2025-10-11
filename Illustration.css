@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dongle', sans-serif;
+  color: #fff;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("BG.png") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+/* --- ======================================================================================================= --- */
+
+.back-arrow {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+.back-arrow img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  filter: none; 
+}
+
+.back-arrow img:hover {
+  transform: translateX(-4px);
+}
+
+/* --- ======================================================================================================= --- */
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* --- ======================================================================================================= --- */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.page-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- ======================================================================================================= --- */
+
+.subtitle {
+  font-size: 2rem;      
+  color: #eee;
+  margin-bottom: 2rem;
+}
+
+/* --- ======================================================================================================= --- */
+
+.divider {
+  width: 70%;
+  height: 2px;
+  background-color: #fff;
+  border: none;
+  margin: 0 auto 3rem auto;
+  opacity: 0.7;
+}
+
+/* --- ======================================================================================================= --- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.art-item {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.art-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.art-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.art-item:hover img {
+  transform: scale(1.05);
+}
+
+/* --- Home Icon --- */
+.home-icon {
+  display: inline-block;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.home-icon img {
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.home-icon:hover img {
+  transform: translateY(-6px);
+}
+
+/* --- ======================================================================================================= --- */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- ======================================================================================================= --- */
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .back-arrow img {
+    width: 30px;
+    height: 30px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .page-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
